@@ -1,0 +1,12 @@
+/* The reference's page-specific styles are retained in content/*.json. */
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #000; }
+:focus-visible { outline: 2px solid #ffc363; outline-offset: 5px; }
+.performance-dialog { position: fixed; width: min(1100px, 90vw); max-width: 90vw; padding: 0; border: 1px solid #ffc363; overflow: visible; background: #000; }
+.performance-dialog::backdrop { background: rgba(0,0,0,.88); }
+.performance-dialog iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; }
+.performance-dialog .video-close { position: absolute; top: -42px; right: 0; padding: 0; border: 0; background: transparent; color: #fff; font-size: 32px; cursor: pointer; }
+@media (max-width:1100px) {
+  #mobile-menu.sidemenu-on { display: block; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

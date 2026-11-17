@@ -1,0 +1,6 @@
+[
+  {
+    "route": "bio/kimberly-chavez-aliva",
+    "error": "Command '['curl', '--fail', '--silent', '--show-error', '--location', '--max-time', '35', '--user-agent', 'Mozilla/5.0', 'https://yalepitchesandtones.com/bio/kimberly-chavez-aliva/']' returned non-zero exit status 56."
+  }
+]
