@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { notFound } from 'next/navigation';
 import parse from 'html-react-parser';
 import SiteBehavior from '@/components/SiteBehavior';
@@ -26,8 +27,9 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const page = await getPage(slug?.join('/') || '');
+  const stylesheet = createHash('sha256').update(page.css).digest('hex').slice(0, 16);
   return <>
-    <style dangerouslySetInnerHTML={{ __html: page.css }} />
+    <link rel="stylesheet" href={`/styles/${stylesheet}.css`} />
     <style>{`/* Static replacements for the reference's WordPress runtime. */
       .themify_builder .wow { visibility: visible; }
       .sbi_photo img, .sby_video_thumbnail img { opacity: 1 !important; }
